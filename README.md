@@ -1,2 +1,0 @@
-# NoSleep
-No Sleep Calculator
