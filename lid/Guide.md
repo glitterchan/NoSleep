@@ -29,3 +29,7 @@ This also depends on the person, but is much more predictable and reproducible t
 -# I only have experience from starting from a night’s sleep then going from there. 
 
 -# **Extra Notes:** ||4:30-8:00 am is the range of when I start tracking, so this *should* be most accurate for people who wake up in that time window.||
+
+
+
+formatted for discord btw lol
