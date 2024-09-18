@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Sleep Deprivation Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function updateTime() {
+            const inputTime = new Date(document.getElementById('timeInput').value);
+            const now = new Date();
+            const timeDiff = now - inputTime;
+            
+            // Convert timeDiff to hours, minutes, and seconds
+            const totalSeconds = Math.floor(timeDiff / 1000);
+            const hours = Math.floor(totalSeconds / 3600);
+            const minutes = Math.floor((totalSeconds % 3600) / 60);
+            const seconds = totalSeconds % 60;
+
+            // Format time
+            const formattedHours = hours;
+            const formattedMinutes = minutes.toString().padStart(2, '0');
+            const formattedSeconds = seconds.toString().padStart(2, '0');
+
+            // Display formatted time
+            document.getElementById('hours').textContent = formattedHours;
+            document.getElementById('minutes').textContent = formattedMinutes;
+            document.getElementById('seconds').textContent = formattedSeconds;
+        }
+
+        function startUpdating() {
+            updateTime();
+            setInterval(updateTime, 1000);
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sleep Deprivation Tracker</h1>
+        <label for="timeInput">Enter start time (PST):</label>
+        <input type="datetime-local" id="timeInput" onchange="startUpdating()">
+        <div class="counter">
+            <span id="hours">0</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+        </div>
+    </div>
+</body>
+</html>
