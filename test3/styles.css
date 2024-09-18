@@ -1,0 +1,56 @@
+:root {
+    --light-color: rgb(255, 204, 204);
+    --bright-color: rgb(255, 182, 193);
+    --dark-color: rgb(255, 160, 182);
+    --shadow-color: rgb(238, 130, 163);
+    --tint-color: rgb(255, 128, 160);
+    --credits-color: rgb(244, 81, 108);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            var(--dark-color),
+            var(--bright-color));
+    background-repeat: no-repeat;
+    width: 100%;
+    overscroll-behavior: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    background-color: var(--light-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px var(--shadow-color);
+}
+
+h1 {
+    color: var(--credits-color);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--tint-color);
+}
+
+input {
+    padding: 10px;
+    border: 1px solid var(--dark-color);
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.counter {
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: var(--credits-color);
+}
