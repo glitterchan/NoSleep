@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Live Counter</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background: #000;
+        }
+        .counter-container {
+            color: #fff;
+            text-align: center;
+            font-size: 3em;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('YOUR_IMAGE_URL_HERE'); /* Replace with your image URL */
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1;
+        }
+        .counter {
+            font-size: 5em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="counter-container">
+        <div id="counter" class="counter">Loading...</div>
+    </div>
+
+    <script>
+        function updateCounter() {
+            const startDate = new Date("2021-01-01T00:00:00Z").getTime();  // Set your starting time
+            const now = new Date().getTime();
+            const elapsedTime = now - startDate;
+
+            const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((elapsedTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+
+            document.getElementById("counter").innerHTML = 
+                days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+        }
+
+        setInterval(updateCounter, 1000);
+    </script>
+
+</body>
+</html>
